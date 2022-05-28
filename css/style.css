@@ -4,10 +4,12 @@ body {
     padding: 0;
 }
 
-#pantalla1 {
+#pantalla1, #pantalla2, #pantalla3, #pantalla4, #pantalla5, #pantalla6 {
     height: 100vh;
     width: 100vw;
+}
 
+#pantalla1 {
     background-color: chocolate;
 
     display: flex;
@@ -17,9 +19,6 @@ body {
 }
 
 #pantalla2 {
-    height: 100vh;
-    width: 100vw;
-
     background-color: crimson;
 
     display: none;
@@ -29,28 +28,31 @@ body {
 }
 
 #pantalla3 {
-    height: 100vh;
-    width: 100vw;
-
     background-color: blue;
 
     display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: 10em;
 }
 
 #pantalla4 {
-    height: 100vh;
-    width: 100vw;
-
     background-color: yellow;
 
     display: none;
 }
 
 #pantalla5 {
-    height: 100vh;
-    width: 100vw;
-
     background-color: orange;
+
+    display: none;
+}
+
+#pantalla6 {
+    background-color: green;
 
     display: none;
 }

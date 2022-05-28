@@ -1,73 +1,31 @@
-/* class Persona {
-
-    constructor(nombre,edad,dni,genero,caracter,fechaNacimiento,skillsJs){
-        this.nombre = nombre;
-        this.edad = edad;
-        this.dni = dni;
-        this.genero = genero;
-        this.caracter = caracter;
-        this.fechaNacimiento = fechaNacimiento;
-        this.skillsJs = skillsJs;
-
-        this.sueño = true;
-        this.hambre = true;
-        this.dinero = 10000;
-        this.motivacion = 1000;
-
-    };
-
-    dormir(){
-
-        if(this.sueño == true){
-            this.sueño == false;
-            this.motivacion += 100;
-        };
-
-    };
-
-    despertar(){
-
-        
-        this.sueño = false;
-        
-    }
-
-    programar(){
-
-        if(this.sueño != true){
-            this.skillsJs = this.skillsJs + 100; 
-        }else{
-            console.log("Vete a dormir");
-        }
-
-    };
-
-};
- */
+let vidatotal1;
+let vidatotal2;
 
 class Gladiador {
 
-    constructor(clase, vida, arma, escudo, armadura){
+    constructor(clase, vida, arma, escudo, armadura, img) {
         this.clase = clase;
         this.vida = vida;
         this.arma = arma;
         this.escudo = escudo;
         this.armadura = armadura;
+        this.img = img;
     }
 
-    ataque1 = (player1,player2) =>{
-        
+/*     ataque1 = () => {
+        vidatotal2 = (player1.arma.dano) - (player2.vida);
     }
 
     ataque2 = () => {
-
+        vidatotal1 = (player1.arma.dano) - (player2.vida);
     }
-
+ */
 }
+
 
 class Arma {
 
-    constructor(nombre,dano,critico,sangrado,rango){
+    constructor(nombre, dano, critico, sangrado, rango) {
         this.nombre = nombre;
         this.dano = dano;
         this.critico = critico;
@@ -76,10 +34,10 @@ class Arma {
     }
 }
 
-let arma1 = new Arma("gladius",50,20,0,30);
-let arma2 = new Arma("tridente",90,50,70,50);
-let arma3 = new Arma("lanza",70,30,40,60);
-let arma4 = new Arma("espadas",70,50,20,30);
+let arma1 = new Arma("gladius", 50, 20, 0, 30);
+let arma2 = new Arma("tridente", 90, 50, 70, 50);
+let arma3 = new Arma("lanza", 70, 30, 40, 60);
+let arma4 = new Arma("espadas", 70, 50, 20, 30);
 
 
 let escudo1 = {
@@ -107,24 +65,15 @@ let armadura3 = {
     reduccionDano: 10
 }
 
-let gladiador1 = new Gladiador("Murmillo",500,arma1,escudo1,armadura1);
-let gladiador2 = new Gladiador("Retiarius",500,arma2,"No",armadura2);
-let gladiador3 = new Gladiador("Hoplomachus",500,arma3,escudo2,armadura2);
-let gladiador4 = new Gladiador("Dimachaerus",500,arma4,"No",armadura3);
+let gladiador1 = new Gladiador("Murmillo", 500, arma1, escudo1, armadura1, "img/gladius.png");
+let gladiador2 = new Gladiador("Retiarius", 500, arma2, "No", armadura2, "img/tridente.png");
+let gladiador3 = new Gladiador("Hoplomachus", 500, arma3, escudo2, armadura2, "img/lanza.png");
+let gladiador4 = new Gladiador("Dimachaerus", 500, arma4, "No", armadura3, "img/duales.png");
 
 console.log(gladiador1);
 console.log(gladiador2);
 console.log(gladiador3);
 console.log(gladiador4);
-
-//Instanciar
-
-/* let persona1 = new Persona("Coche rojo",24,"12345678A","M","Tranquilo","04/08/1997",2000);
-let persona2 = new Persona("Coche Azul",28,"12345678B","M","Alegre","07/02/1994",2100);
-let persona3 = new Persona("Coche Amarillo",47,"87654321C","F","Curiosa","22/08/1974",2200);
-let persona4 = new Persona("Coche Multicolor",36,"12345678F","M","Contrario","30/07/1986",1900);
- */
-//Diccionario de JS
 
 let allplayers = {
     "1": gladiador1,

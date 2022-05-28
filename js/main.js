@@ -23,10 +23,14 @@ const screenSwitch = (pantallaDestino) => {
    
 };
 
+let player1vs = document.getElementById("player1vs");
+let player2vs = document.getElementById("player2vs");
+
+
+console.log(player1vs);
+
 let player1 = "";
 let player2 = "";
-let player3 = "";
-let player4 = "";
 
 let turnoSeleccion = 1;
 
@@ -55,13 +59,14 @@ const selecciona = (seleccionado) => {
         console.log(player1);
         console.log(player2);
 
-        player1.despertar();
-
-        player1.programar();
+        player1vs.src = player1.img;
+        player2vs.src = player2.img;
        
         console.log(player2.clase,player2.arma);
         screenSwitch('pantalla3')
-        turnoSeleccion = 0;
+        turnoSeleccion = 1;
     }
     
 };
+
+console.log(player2.vida);
