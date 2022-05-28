@@ -11,15 +11,6 @@ class Gladiador {
         this.armadura = armadura;
         this.img = img;
     }
-
-/*     ataque1 = () => {
-        vidatotal2 = (player1.arma.dano) - (player2.vida);
-    }
-
-    ataque2 = () => {
-        vidatotal1 = (player1.arma.dano) - (player2.vida);
-    }
- */
 }
 
 

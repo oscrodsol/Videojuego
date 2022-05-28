@@ -33,16 +33,50 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+#listo{
+    height: 5em;
+    width: 100vw;
+    background-color: aqua;
+    display: none;
+}
+
+.versus{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 img{
     height: 10em;
 }
 
+.jugadores{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.atacar{
+    width: 100vw;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: aqua;
+}
+
 #pantalla4 {
     background-color: yellow;
 
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #pantalla5 {
