@@ -1,0 +1,89 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#pantalla1 {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: chocolate;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#pantalla2 {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: crimson;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pantalla3 {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: blue;
+
+    display: none;
+}
+
+#pantalla4 {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: yellow;
+
+    display: none;
+}
+
+#pantalla5 {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: orange;
+
+    display: none;
+}
+
+.logo {
+
+    height: 15em;
+
+    width: 27em;
+} 
+.padre{
+
+    height: 80%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#boton{
+    height: 20%;
+    width: 100%;
+
+    background-color: aqua;
+}
+
+
+.alumno{
+
+    display: flex;
+    height: 10em;
+    width: 10em;
+}

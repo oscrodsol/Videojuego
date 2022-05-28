@@ -5,13 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div id="pantalla1"></div>
-    <div id="pantalla2"></div>
-    <div id="pantalla3"></div>
-    <div id="pantalla4"></div>
-    <div id="pantalla5"></div>
-    <div id="pantalla6"></div>
+
+    <div id="pantalla1"><img class="logo" src="img/logo.png" alt="logoRacing" onclick="screenSwitch('pantalla2')"></div>
+    <div id="pantalla2" >
+        <div class="padre">
+            <div class="alumno" onclick="selecciona('1')"><img class="foto" src="img/cocheRojo.jpg" alt="adsf"></div>
+            <div class="alumno" onclick="selecciona('2')"><img class="foto" src="img/cocheAzul.jpg" alt="asfasdf"></div>
+            <div class="alumno" onclick="selecciona('3')"><img class="foto" src="img/cocheAmarillo.webp" alt="fffff"></div>
+            <div class="alumno" onclick="selecciona('4')"><img class="foto" src="img/cocheMulticolor.jpg" alt="pppppopop"></div>
+        </div>
+        <div id="boton" onclick="screenSwitch('pantalla3')"></div>
+    </div>
+    <div id="pantalla3" onclick="screenSwitch('pantalla4')"></div>
+    <div id="pantalla4" onclick="screenSwitch('pantalla5')"></div>
+    <div id="pantalla5" onclick="screenSwitch('pantalla1')"></div>
+    <div id="pantalla6" onclick="screenSwitch('pantalla1')"></div>
+
+    <script src="js/gladiador.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
