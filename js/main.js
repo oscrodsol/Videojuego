@@ -15,11 +15,12 @@ const screenSwitch = (pantallaDestino) => {
 
 let player1vs = document.getElementById("player1vs");
 let player2vs = document.getElementById("player2vs");
+let player1Combate = document.getElementById("player1Combate");
+let player2Combate = document.getElementById("player2Combate");
 let botonListo = document.getElementById("listo");
 let combate;
-
-
-console.log(player1vs);
+let vidatotal1;
+let vidatotal2;
 
 let player1 = "";
 let player2 = "";
@@ -53,8 +54,12 @@ const selecciona = (seleccionado) => {
 
         player1vs.src = player1.img;
         player2vs.src = player2.img;
+        player1Combate.src = player1.img;
+        player2Combate.src = player2.img;
+        vidatotal1 = player2.vida;
+        vidatotal2 = player1.vida;
 
-        console.log(player2.clase, player2.arma);
+        console.log(player2.clase, player2.arma, player2.vida);
         screenSwitch('pantalla3')
 
 
@@ -67,4 +72,4 @@ const selecciona = (seleccionado) => {
 };
 
 
-console.log(player2.vida);
+console.log(player2);

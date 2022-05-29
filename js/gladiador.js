@@ -1,5 +1,3 @@
-let vidatotal1;
-let vidatotal2;
 
 class Gladiador {
 
@@ -16,9 +14,9 @@ class Gladiador {
 
 class Arma {
 
-    constructor(nombre, dano, critico, sangrado, rango) {
+    constructor(nombre, dmg, critico, sangrado, rango) {
         this.nombre = nombre;
-        this.dano = dano;
+        this.dmg = dmg;
         this.critico = critico;
         this.sangrado = sangrado;
         this.rango = rango;
