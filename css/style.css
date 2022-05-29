@@ -83,6 +83,9 @@ img{
     background-color: orange;
 
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #pantalla6 {

@@ -18,6 +18,8 @@ let player2vs = document.getElementById("player2vs");
 let player1Combate = document.getElementById("player1Combate");
 let player2Combate = document.getElementById("player2Combate");
 let botonListo = document.getElementById("listo");
+let ganador = document.getElementById("ganador");
+let textoGanador = document.getElementById("textoGanador");
 let combate;
 let vidatotal1;
 let vidatotal2;
@@ -59,7 +61,8 @@ const selecciona = (seleccionado) => {
         vidatotal1 = player2.vida;
         vidatotal2 = player1.vida;
 
-        console.log(player2.clase, player2.arma, player2.vida);
+        console.log(player1.clase, player1.arma.dmg, player1.vida);
+        console.log(player2.clase, player2.arma.dmg, player2.vida);
         screenSwitch('pantalla3')
 
 
@@ -70,6 +73,8 @@ const selecciona = (seleccionado) => {
         turnoSeleccion = 1;
     }
 };
+
+
 
 
 console.log(player2);
