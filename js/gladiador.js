@@ -54,10 +54,10 @@ let armadura3 = {
     reduccionDano: 10
 }
 
-let gladiador1 = new Gladiador("Murmillo", 500, arma1, escudo1, armadura1, "img/gladius.png");
-let gladiador2 = new Gladiador("Retiarius", 500, arma2, "No", armadura2, "img/tridente.png");
-let gladiador3 = new Gladiador("Hoplomachus", 500, arma3, escudo2, armadura2, "img/lanza.png");
-let gladiador4 = new Gladiador("Dimachaerus", 500, arma4, "No", armadura3, "img/duales.png");
+let gladiador1 = new Gladiador("Murmillo", 1200, arma1, escudo1, armadura1, "img/gladius.png");
+let gladiador2 = new Gladiador("Retiarius", 1200, arma2, "No", armadura2, "img/tridente.png");
+let gladiador3 = new Gladiador("Hoplomachus", 1200, arma3, escudo2, armadura2, "img/lanza.png");
+let gladiador4 = new Gladiador("Dimachaerus", 1200, arma4, "No", armadura3, "img/duales.png");
 
 console.log(gladiador1);
 console.log(gladiador2);

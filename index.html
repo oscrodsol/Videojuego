@@ -13,10 +13,10 @@
     <div id="pantalla1"><img class="logo" src="img/logo.png" alt="logoRacing" onclick="screenSwitch('pantalla2')"></div>
     <div id="pantalla2" >
         <div class="padre">
-            <div class="alumno" onclick="selecciona('1')"><img class="foto" src="img/gladius.png" alt="adsf"></div>
-            <div class="alumno" onclick="selecciona('2')"><img class="foto" src="img/tridente.png" alt="asfasdf"></div>
-            <div class="alumno" onclick="selecciona('3')"><img class="foto" src="img/lanza.png" alt="fffff"></div>
-            <div class="alumno" onclick="selecciona('4')"><img class="foto" src="img/duales.png" alt="pppppopop"></div>
+            <div class="gladiador" onclick="selecciona('1')"><img class="foto" src="img/gladius.png" alt="adsf"></div>
+            <div class="gladiador" onclick="selecciona('2')"><img class="foto" src="img/tridente.png" alt="asfasdf"></div>
+            <div class="gladiador" onclick="selecciona('3')"><img class="foto" src="img/lanza.png" alt="fffff"></div>
+            <div class="gladiador" onclick="selecciona('4')"><img class="foto" src="img/duales.png" alt="pppppopop"></div>
         </div>
         <div id="boton" onclick="screenSwitch('pantalla3')"></div>
     </div>
@@ -31,9 +31,21 @@
     </div>
     <div id="pantalla4">
         <div class="jugadores">
-            <div class="player1vs"><img src="" alt="" id="player1Combate"></div>
+            <div class="infoJugador1">
+                <div class="textoJugador1"><p id = "textoJugador1"></p></div>
+                <div class="vida1">
+                    <div id="vida1"><p id="textoBarra1"></p></div>
+                </div>
+                <div class="player1vs"><img src="" alt="" id="player1Combate"></div>
+            </div>
             <div class="vs"><img src="img/vs.png" alt="asdf"></div>
-            <div class="player2vs"><img src="" alt="" id="player2Combate"></div>
+            <div class="infoJugador2">
+                <div class="textoJugador2"><p id = "textoJugador2"></p></div>
+                <div class="vida2">
+                    <div id="vida2"><p id="textoBarra2"></p></div>
+                </div>
+                <div class="player2vs"><img src="" alt="" id="player2Combate"></div>
+            </div>
         </div>
         <div class="atacar">
             <div id="atacar1" onclick="ataque1()">Ataque</div>
@@ -44,7 +56,6 @@
         <div class="ganador"><img src="" alt="" id = "ganador"></div>
         <div class="textoGanador"><p id = "textoGanador"></p></div>
     </div>
-<!--     <div id="pantalla6" onclick="screenSwitch('pantalla1')"></div> -->
 
     <script src="js/gladiador.js"></script>
     <script src="js/main.js"></script>

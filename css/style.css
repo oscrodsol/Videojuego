@@ -71,12 +71,58 @@ img{
 }
 
 #pantalla4 {
-    background-color: yellow;
+    background-color: rgb(166, 166, 159);
 
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.infoJugador1, .infoJugador2{
+    height: 15em;
+    width: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vida1, .vida2{
+    display: flex;
+    border: solid;
+    border-color: black;
+    border-width: medium;
+    height: 2em;
+    width: 15em;
+    background-color: grey;
+    border-radius: 1em;
+}
+
+#vida1{
+    height: 2em;
+    width: 15em;
+    background-color: green;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    border-radius: 1em;
+    transition: width 0.3s;
+}
+
+.vida2{
+    justify-content: right;
+}
+
+#vida2{
+    height: 2em;
+    width: 15em;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border-radius: 1em;
+    transition: width 0.3s;
 }
 
 #pantalla5 {
@@ -86,12 +132,6 @@ img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-#pantalla6 {
-    background-color: green;
-
-    display: none;
 }
 
 .logo {
@@ -119,8 +159,7 @@ img{
     background-color: aqua;
 }
 
-
-.alumno{
+.gladiador{
 
     display: flex;
     height: 10em;

@@ -10,7 +10,6 @@ const screenSwitch = (pantallaDestino) => {
             document.getElementById(pantalla).style.display = "none";
         };
     };
-
 };
 
 let player1vs = document.getElementById("player1vs");
@@ -20,7 +19,12 @@ let player2Combate = document.getElementById("player2Combate");
 let botonListo = document.getElementById("listo");
 let ganador = document.getElementById("ganador");
 let textoGanador = document.getElementById("textoGanador");
-let combate;
+let vida1 = document.getElementById("vida1");
+let vida2 = document.getElementById("vida2");
+let textoJugador1 = document.getElementById("textoJugador1");
+let textoJugador2 = document.getElementById("textoJugador2");
+let textoBarra1 = document.getElementById("textoBarra1");
+let textoBarra2 = document.getElementById("textoBarra2");
 let vidatotal1;
 let vidatotal2;
 
@@ -64,17 +68,17 @@ const selecciona = (seleccionado) => {
         console.log(player1.clase, player1.arma.dmg, player1.vida);
         console.log(player2.clase, player2.arma.dmg, player2.vida);
         screenSwitch('pantalla3')
-
-
         setTimeout(() => {
             botonListo.style.display = "block";
         }, 2000);
-        combate = true;
         turnoSeleccion = 1;
     }
+    vida1.style.width = "15em";
+    vida2.style.width = "15em";
+    vida1.style.backgroundColor = "green";
+    vida2.style.backgroundColor = "green";
+    textoBarra1.innerHTML = player1.vida;
+    textoBarra2.innerHTML = player2.vida;
+    textoJugador1.innerHTML = `Vida restante: ${player1.vida}`;
+    textoJugador2.innerHTML = `Vida restante: ${player2.vida}`;
 };
-
-
-
-
-console.log(player2);
