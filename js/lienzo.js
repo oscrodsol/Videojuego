@@ -1,6 +1,7 @@
 let juego = document.getElementById("lienzo");
 let lienzo = juego.getContext("2d");
 
+lienzo.fillStyle = "black";
 lienzo.fillRect(0, 0, juego.width, juego.height);
 
 
@@ -62,108 +63,66 @@ const matriz = () => {
     lienzo.fill();
 }
 
-const gravedad = 0.5;
+/* refresco*/
+const fps = () => {
+    if (pantalla4 = true) {
+        setInterval(() => {
+            lienzo.fillStyle = "black";
+            lienzo.fillRect(0, 0, juego.width, juego.height);
+            matriz();
 
-class Jugador {
-    constructor({ posicion, velocidad,}) {
-        this.posicion = posicion;
-        this.velocidad = velocidad;
-        this.altura = 150;
-        this.ancho = 100;
-        this.hitbox = {
-            posicion: this.posicion,
-            ancho: 150,
-            alto: 50,
-        }
-    }
+            if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x &&
+                player1.hitbox.posicion.x + 50 <= player2.posicion.x + player2.ancho &&
+                player1.hitbox.posicion.y + player1.hitbox.ancho >= player2.posicion.y &&
+                player1.hitbox.posicion.y <= player2.posicion.y + player2.altura &&
+                player1.ataca == true
+            ) {
+                player1.ataca = false;
+                console.log("hola");
+            }
 
-    render() {
-        lienzo.fillStyle = "yellowgreen";
-        lienzo.fillRect(this.posicion.x, this.posicion.y, 100, this.altura);
-        lienzo.strokeStyle = "green";
-        lienzo.strokeRect(this.posicion.x, this.posicion.y, 100, this.altura);
-        lienzo.fillStyle = "brown";
-        lienzo.fillRect(this.hitbox.posicion.x + 50, this.hitbox.posicion.y + 50, this.hitbox.ancho, this.hitbox.alto);
-        lienzo.strokeStyle = "red";
-        lienzo.strokeRect(this.hitbox.posicion.x + 50, this.hitbox.posicion.y + 50, this.hitbox.ancho, this.hitbox.alto);
-    }
+            if (player2.hitbox.posicion.x + player2.hitbox.ancho + 50 >= player1.posicion.x &&
+                player2.hitbox.posicion.x + 50 <= player1.posicion.x + player1.ancho &&
+                player2.hitbox.posicion.y + player2.hitbox.ancho >= player1.posicion.y &&
+                player2.hitbox.posicion.y <= player1.posicion.y + player1.altura &&
+                player2.ataca == true
+            ) {
+                player2.ataca = false;
+                console.log("hola");
+            }
 
-    refresco() {
-        this.render();
-
-        this.posicion.x += this.velocidad.x;
-        this.posicion.y += this.velocidad.y;
-
-        if (this.posicion.y + this.altura >= juego.height) {
-            this.velocidad.y = 0;
-        } else {
-            this.velocidad.y += gravedad;
-        }
+            player1.refresco();
+            player2.refresco();
+            /*     console.log("jejejeje") */
+        }, 1000 / 60);
     }
 }
-
-const jugador1 = new Jugador({
-    posicion: {
-        x: 500,
-        y: 300
-    },
-    velocidad: {
-        x: 0,
-        y: 0
-    }
-});
-
-console.log(jugador1);
-
-const jugador2 = new Jugador({
-    posicion: {
-        x: 750,
-        y: 300
-    },
-    velocidad: {
-        x: 0,
-        y: 0
-    }
-});
-
-console.log(jugador2);
-
-/* refresco*/
-setInterval(() => {
-    lienzo.fillStyle = "black";
-    lienzo.fillRect(0, 0, juego.width, juego.height);
-    matriz();
-    if (jugador1.hitbox.posicion.x + jugador1.hitbox.ancho + 50 >= jugador2.posicion.x &&
-        jugador1.hitbox.posicion.x + 50 <= jugador2.posicion.x + jugador2.ancho &&
-        jugador1.hitbox.posicion.y + jugador1.hitbox.ancho >= jugador2.posicion.y &&
-        jugador1.hitbox.posicion.y <= jugador2.posicion.y + jugador2.altura
-        ) {
-        console.log("hola");
-    }
-    jugador1.refresco();
-    jugador2.refresco();
-/*     console.log("jejejeje") */
-}, 1000 / 60);
 
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case 'd':
-            jugador1.velocidad.x = 5;
+            player1.velocidad.x = 5;
             break
         case 'a':
-            jugador1.velocidad.x = -5;
+            player1.velocidad.x = -5;
             break
         case 'w':
-            jugador1.velocidad.y = -10;
+            player1.velocidad.y = -10;
+            break
+        case ' ':
+            player1.ataque()
             break
         case '6':
-            jugador2.velocidad.x = 5;
+            player2.velocidad.x = 5;
             break
         case '4':
-            jugador2.velocidad.x = -5;
+            player2.velocidad.x = -5;
             break
         case '8':
-            jugador2.velocidad.y = -10;
+            player2.velocidad.y = -10;
+            break
+        case '0':
+            player2.ataque()
             break
         default:
             break;
@@ -173,19 +132,18 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keyup", (event) => {
     switch (event.key) {
         case 'd':
-            jugador1.velocidad.x = 0;
+            player1.velocidad.x = 0;
             break
         case 'a':
-            jugador1.velocidad.x = 0;
+            player1.velocidad.x = 0;
             break
         case '6':
-            jugador2.velocidad.x = 0;
+            player2.velocidad.x = 0;
             break
         case '4':
-            jugador2.velocidad.x = 0;
+            player2.velocidad.x = 0;
             break
         default:
             break;
     }
 });
-

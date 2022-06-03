@@ -1,3 +1,4 @@
+let pantalla4 = false;
 const screenSwitch = (pantallaDestino) => {
 
     let destino = document.getElementById(pantallaDestino);
@@ -10,6 +11,10 @@ const screenSwitch = (pantallaDestino) => {
             document.getElementById(pantalla).style.display = "none";
         };
     };
+
+if (pantallaDestino == "pantalla4") {
+    fps();
+}
 };
 
 let player1vs = document.getElementById("player1vs");
@@ -29,7 +34,7 @@ let gladiadorPlayer1 = document.getElementById("gladiadorPlayer1");
 let gladiadorPlayer2 = document.getElementById("gladiadorPlayer2");
 let vidatotal1;
 let vidatotal2;
-
+const gravedad = 0.5;
 let player1 = "";
 let player2 = "";
 
