@@ -12,6 +12,11 @@
 
     <div id="pantalla1"><img class="logo" src="img/logo.png" alt="logoRacing" onclick="screenSwitch('pantalla2')"></div>
     <div id="pantalla2" >
+        <div class="padreArriba">
+            <div class="previewGladiador"><img src="" alt="" id="gladiadorPlayer1"></div>
+            <div class="previewVersus"><img src="img/vs.png" alt=""></div>
+            <div class="previewGladiador"><img src="" alt="" id="gladiadorPlayer2"></div>
+        </div>
         <div class="padre">
             <div class="gladiador" onclick="selecciona('1')"><img class="foto" src="img/gladius.png" alt="adsf"></div>
             <div class="gladiador" onclick="selecciona('2')"><img class="foto" src="img/tridente.png" alt="asfasdf"></div>
@@ -21,7 +26,6 @@
         <div id="boton" onclick="screenSwitch('pantalla3')"></div>
     </div>
     <div id="pantalla3">
-        <div class="cuentaAtras"><p id = "cuentaAtras"></p></div>
         <div class="versus">
             <div class="player1vs"><img src="" alt="" id="player1vs"></div>
             <div class="vs"><img src="img/vs.png" alt="asdf" onclick="screenSwitch('pantalla4')"></div>
@@ -51,6 +55,7 @@
             <div id="atacar1" onclick="ataque1()">Ataque</div>
             <div id="atacar2" onclick="ataque2()">Ataque</div>
         </div>
+        <canvas id="lienzo" width=1534 height=747></canvas>
     </div>
     <div id="pantalla5" onclick="screenSwitch('pantalla1')">
         <div class="ganador"><img src="" alt="" id = "ganador"></div>
@@ -60,5 +65,6 @@
     <script src="js/gladiador.js"></script>
     <script src="js/main.js"></script>
     <script src="js/combate.js"></script>
+    <script src="js/lienzo.js"></script>
 </body>
 </html>

@@ -25,6 +25,8 @@ let textoJugador1 = document.getElementById("textoJugador1");
 let textoJugador2 = document.getElementById("textoJugador2");
 let textoBarra1 = document.getElementById("textoBarra1");
 let textoBarra2 = document.getElementById("textoBarra2");
+let gladiadorPlayer1 = document.getElementById("gladiadorPlayer1");
+let gladiadorPlayer2 = document.getElementById("gladiadorPlayer2");
 let vidatotal1;
 let vidatotal2;
 
@@ -33,8 +35,8 @@ let player2 = "";
 
 let turnoSeleccion = 1;
 
-const selecciona = (seleccionado) => {
 
+const selecciona = (seleccionado) => {
 
     switch (turnoSeleccion) {
         case 1:
@@ -49,7 +51,7 @@ const selecciona = (seleccionado) => {
             console.log("Ya están todos seleccionados....");
             break;
     }
-
+    
     turnoSeleccion++;
 
     if (turnoSeleccion == 3) {
@@ -70,7 +72,7 @@ const selecciona = (seleccionado) => {
         screenSwitch('pantalla3')
         setTimeout(() => {
             botonListo.style.display = "block";
-        }, 2000);
+        }, 1000);
         turnoSeleccion = 1;
     }
     vida1.style.width = "15em";
