@@ -1,7 +1,8 @@
 
-class Gladiador {
+class Gladiador{
 
-    constructor(clase, vida, arma, escudo, armadura, img, {posicion, velocidad}) {
+    constructor(clase, vida, arma, escudo, armadura, img, {posicion, velocidad,sprites},linkImg) {
+
         this.clase = clase;
         this.vida = vida;
         this.arma = arma;
@@ -10,23 +11,31 @@ class Gladiador {
         this.img = img;
         this.posicion = posicion;
         this.velocidad = velocidad;
-        this.altura = 150;
-        this.ancho = 100;
+        this.altura = 250;
+        this.ancho = 125;
         this.hitbox = {
             posicion: this.posicion,
             ancho: 150,
             alto: 50,
         }
-        this.ataca
+        this.ataca;
+        this.image = new Image();
+        this.sprites = sprites;
+        this.image.src = linkImg;
+
+        for (let sprite in this.sprites) {
+            sprites[sprite].image = new Image();
+            sprites[sprite].image.src = sprites[sprite].linkImg;
+        }
     }
 
     render() {
-        lienzo.fillStyle = "yellowgreen";
-        lienzo.fillRect(this.posicion.x, this.posicion.y, 100, this.altura);
+/*         lienzo.fillStyle = "yellowgreen";
+        lienzo.fillRect(this.posicion.x, this.posicion.y, this.ancho, this.altura);
         lienzo.strokeStyle = "green";
-        lienzo.strokeRect(this.posicion.x, this.posicion.y, 100, this.altura);
-        
-        if (player1.ataca == true) {
+        lienzo.strokeRect(this.posicion.x, this.posicion.y, this.ancho, this.altura); */
+        lienzo.drawImage(this.image, this.posicion.x, this.posicion.y);
+/*         if (player1.ataca == true) {
             lienzo.fillStyle = "brown";
             lienzo.fillRect(player1.hitbox.posicion.x + 50, player1.hitbox.posicion.y + 50, player1.hitbox.ancho, player1.hitbox.alto);
             lienzo.strokeStyle = "red";
@@ -37,7 +46,8 @@ class Gladiador {
             lienzo.fillRect(player2.hitbox.posicion.x + 50, player2.hitbox.posicion.y + 50, player2.hitbox.ancho, player2.hitbox.alto);
             lienzo.strokeStyle = "red";
             lienzo.strokeRect(player2.hitbox.posicion.x + 50, player2.hitbox.posicion.y + 50, player2.hitbox.ancho, player2.hitbox.alto);
-        }
+        } */
+
     }
 
     refresco() {
@@ -46,7 +56,7 @@ class Gladiador {
         this.posicion.x += this.velocidad.x;
         this.posicion.y += this.velocidad.y;
 
-        if (this.posicion.y + this.altura >= juego.height) {
+        if (this.posicion.y + this.altura >= 600) {
             this.velocidad.y = 0;
         } else {
             this.velocidad.y += gravedad;
@@ -57,7 +67,7 @@ class Gladiador {
         this.ataca = true;
         setTimeout(() => {
             this.ataca = false;
-        }, 100)
+        }, 200)
     }
 }
 
@@ -104,10 +114,10 @@ let armadura3 = {
     reduccionDano: 10
 }
 
-let gladiador1 = new Gladiador("Murmillo", 1200, arma1, escudo1, armadura1, "img/gladius.png", {posicion:{x: 500,y: 300},velocidad:{x: 0,y: 0}});
-let gladiador2 = new Gladiador("Retiarius", 1200, arma2, "No", armadura2, "img/tridente.png", {posicion: {x: 750,y: 300},velocidad: {x: 0,y: 0}});
-let gladiador3 = new Gladiador("Hoplomachus", 1200, arma3, escudo2, armadura2, "img/lanza.png", {posicion:{x: 500,y: 300},velocidad:{x: 0,y: 0}});
-let gladiador4 = new Gladiador("Dimachaerus", 1200, arma4, "No", armadura3, "img/duales.png", {posicion: {x: 750,y: 300},velocidad: {x: 0,y: 0}});
+let gladiador1 = new Gladiador("Murmillo", 1200, arma1, escudo1, armadura1, "img/gladius.png", {posicion:{x: 500,y: 200},velocidad:{x: 0,y: 0},sprites:{idle:{linkImg:"img/murmilloIdle.png"},ataque:{linkImg:"img/murmilloAtaque.png"},andar:{linkImg:"img/murmilloAndar.png"},salto:{linkImg:"img/murmilloSalto.png"}}},"img/murmilloIdle.png");
+let gladiador2 = new Gladiador("Retiarius", 1200, arma2, "No", armadura2, "img/tridente.png", {posicion: {x: 750,y: 200},velocidad: {x: 0,y: 0},sprites:{idle:{linkImg:"img/murmilloIdle.png"},ataque:{linkImg:"img/murmilloAtaque.png"},andar:{linkImg:"img/murmilloAndar.png"},salto:{linkImg:"img/murmilloSalto.png"}}},"img/murmilloIdle.png");
+let gladiador3 = new Gladiador("Hoplomachus", 1200, arma3, escudo2, armadura2, "img/lanza.png", {posicion:{x: 500,y: 200},velocidad:{x: 0,y: 0},sprites:{idle:{linkImg:"img/murmilloIdle.png"},ataque:{linkImg:"img/murmilloAtaque.png"},andar:{linkImg:"img/murmilloAndar.png"},salto:{linkImg:"img/murmilloSalto.png"}}},"img/murmilloIdle.png");
+let gladiador4 = new Gladiador("Dimachaerus", 1200, arma4, "No", armadura3, "img/duales.png", {posicion: {x: 750,y: 200},velocidad: {x: 0,y: 0},sprites:{idle:{linkImg:"img/murmilloIdle.png"},ataque:{linkImg:"img/murmilloAtaque.png"},andar:{linkImg:"img/murmilloAndar.png"},salto:{linkImg:"img/murmilloSalto.png"}}},"img/murmilloIdle.png");
 
 console.log(gladiador1);
 console.log(gladiador2);

@@ -1,9 +1,30 @@
 let juego = document.getElementById("lienzo");
 let lienzo = juego.getContext("2d");
 
-lienzo.fillStyle = "black";
-lienzo.fillRect(0, 0, juego.width, juego.height);
+class Sprite {
+    constructor({posicion, linkImg}) {
+        this.posicion = posicion;
+        this.alto = 150;
+        this.ancho = 100;
+        this.image = new Image();
+        this.image.src = linkImg;
+    }
+    render() {
+        lienzo.drawImage(this.image, this.posicion.x, this.posicion.y)
+    }
 
+    refresco() {
+        this.render();
+    }
+}
+
+let fondo = new Sprite({
+    posicion: {
+        x: 0,
+        y: 0
+    },
+    linkImg: "img/coliseo.png"
+})
 
 const matriz = () => {
 
@@ -29,48 +50,26 @@ const matriz = () => {
         if (y % 50 == 0) { lienzo.fillText(y, 0, y + 10); }
         lienzo.stroke();
     }
-
-    lienzo.stroke();
-
-    lienzo.beginPath();
-    lienzo.strokeStyle = "#FFFFFF";
-    lienzo.fillStyle = "#00FF00";
-    lienzo.lineWidth = 2;
-    lienzo.moveTo(50, 50);
-    lienzo.lineTo(150, 250);
-    lienzo.lineTo(250, 170);
-    lienzo.lineTo(500, 600);
-    lienzo.lineTo(100, 450);
-    lienzo.lineTo(150, 50);
-    lienzo.lineTo(300, 50);
-    lienzo.stroke();
-    lienzo.fillText("(50, 50)", 30, 40);
-    lienzo.fillText("(150, 250)", 130, 260);
-    lienzo.fillText("(250, 170)", 255, 175);
-    lienzo.fillText("(500, 600)", 480, 610);
-    lienzo.fillText("(100, 450)", 105, 445);
-    lienzo.fillText("(150, 50)", 130, 40);
-    lienzo.fillText("(300, 50)", 280, 40);
-    lienzo.fill();
-    lienzo.strokeStyle = "blue";
-    lienzo.fillStyle = "lightblue";
-    lienzo.beginPath();
-    lienzo.moveTo(600, 200);
-    lienzo.lineTo(270, 360);
-    lienzo.lineTo(270, 310);
-    lienzo.closePath();
-    lienzo.stroke();
-    lienzo.fill();
 }
 
 /* refresco*/
 const fps = () => {
     if (pantalla4 = true) {
         setInterval(() => {
-            lienzo.fillStyle = "black";
-            lienzo.fillRect(0, 0, juego.width, juego.height);
-            matriz();
-
+            fondo.refresco();
+            /* matriz(); */
+            /* murmilloImg.render(); */
+            if (player1.posicion.y + player1.altura >= 600) {
+                player1.posicion.y = 600 - player1.altura;
+            }
+            if (player2.posicion.y + player2.altura >= 600) {
+                player2.posicion.y = 600 - player2.altura;
+            }
+            if (player1.ataca == true) {
+                player1.image = player1.sprites.ataque.image
+            }else if(player1.ataca == false){
+                player1.image = player1.sprites.idle.image
+            }
             if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x &&
                 player1.hitbox.posicion.x + 50 <= player2.posicion.x + player2.ancho &&
                 player1.hitbox.posicion.y + player1.hitbox.ancho >= player2.posicion.y &&
@@ -109,8 +108,8 @@ window.addEventListener("keydown", (event) => {
             player1.velocidad.x = -8;
             break
         case 'w':
-            if (player1.posicion.y + player1.altura>= juego.height) {
-                player1.velocidad.y = -10;
+            if (player1.posicion.y + player1.altura >= 600) {
+                player1.velocidad.y = -12;
             }
             break
         case ' ':
@@ -123,8 +122,8 @@ window.addEventListener("keydown", (event) => {
             player2.velocidad.x = -8;
             break
         case '8':
-          if  (player2.posicion.y + player2.altura >= juego.height) {
-                player2.velocidad.y = -10;
+            if (player2.posicion.y + player2.altura >= 600) {
+                player2.velocidad.y = -12;
             }
             break
         case '0':

@@ -34,7 +34,7 @@ let gladiadorPlayer1 = document.getElementById("gladiadorPlayer1");
 let gladiadorPlayer2 = document.getElementById("gladiadorPlayer2");
 let vidatotal1;
 let vidatotal2;
-const gravedad = 0.5;
+const gravedad = 0.7;
 let player1 = "";
 let player2 = "";
 
