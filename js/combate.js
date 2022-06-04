@@ -13,7 +13,7 @@ const ataque1 = () => {
     }
     critico = 0;
 
-    vida2.style.width = (15 * vidatotal2) / player2.vida + "em";
+    vida2.style.width = (35 * vidatotal2) / player2.vida + "em";
     if (vidatotal2 <= player2.vida/5 && player2.vida/2) {
         vida2.style.backgroundColor = "red";
     } else if (vidatotal2 <= player2.vida/2) {
@@ -49,7 +49,7 @@ const ataque2 = () => {
 
     critico = 0;
 
-    vida1.style.width = (15 * vidatotal1) / player1.vida + "em";
+    vida1.style.width = (35 * vidatotal1) / player1.vida + "em";
     if (vidatotal1 <= player1.vida/5 && player1.vida/2) {
         vida1.style.backgroundColor = "red";
     } else if (vidatotal1 <= player1.vida/2) {

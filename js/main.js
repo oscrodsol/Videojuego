@@ -80,8 +80,8 @@ const selecciona = (seleccionado) => {
         }, 1000);
         turnoSeleccion = 1;
     }
-    vida1.style.width = "15em";
-    vida2.style.width = "15em";
+    vida1.style.width = "35em";
+    vida2.style.width = "35em";
     vida1.style.backgroundColor = "green";
     vida2.style.backgroundColor = "green";
     textoBarra1.innerHTML = player1.vida;

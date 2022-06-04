@@ -54,28 +54,19 @@ img{
 }
 
 .jugadores{
-/*     width: 100vw;
+    position: absolute;
+    width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; */
-    display: none;
-}
-
-.atacar{
-/*     width: 100vw;
-    display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    background-color: aqua; */
-    display: none;
+    display: flex;
 }
 
 #pantalla4 {
-    background-color: rgb(166, 166, 159);
 
     display: none;
+    flex-direction: column;
 /*     justify-content: center;
     align-items: center;
     flex-direction: column; */
@@ -92,7 +83,7 @@ img{
 
 .vida1, .vida2, #vida1, #vida2{
     height: 2em;
-    width: 15em;
+    width: 35em;
 }
 
 .vida1, .vida2{

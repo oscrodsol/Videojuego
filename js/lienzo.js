@@ -77,6 +77,7 @@ const fps = () => {
                 player1.hitbox.posicion.y <= player2.posicion.y + player2.altura &&
                 player1.ataca == true
             ) {
+                ataque1();
                 player1.ataca = false;
                 console.log("hola");
             }
@@ -87,6 +88,7 @@ const fps = () => {
                 player2.hitbox.posicion.y <= player1.posicion.y + player1.altura &&
                 player2.ataca == true
             ) {
+                ataque2();
                 player2.ataca = false;
                 console.log("hola");
             }
@@ -101,25 +103,29 @@ const fps = () => {
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case 'd':
-            player1.velocidad.x = 5;
+            player1.velocidad.x = 8;
             break
         case 'a':
-            player1.velocidad.x = -5;
+            player1.velocidad.x = -8;
             break
         case 'w':
-            player1.velocidad.y = -10;
+            if (player1.posicion.y + player1.altura>= juego.height) {
+                player1.velocidad.y = -10;
+            }
             break
         case ' ':
             player1.ataque()
             break
         case '6':
-            player2.velocidad.x = 5;
+            player2.velocidad.x = 8;
             break
         case '4':
-            player2.velocidad.x = -5;
+            player2.velocidad.x = -8;
             break
         case '8':
-            player2.velocidad.y = -10;
+          if  (player2.posicion.y + player2.altura >= juego.height) {
+                player2.velocidad.y = -10;
+            }
             break
         case '0':
             player2.ataque()
