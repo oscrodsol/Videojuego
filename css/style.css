@@ -51,7 +51,7 @@ body {
 
 }
 
-#pantalla2 {
+#pantalla2,#pantalla3 {
     background-image: url("../img/barracones.png");
     background-size: cover;
     display: none;
@@ -101,7 +101,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3em;
 }
 
 #vidaPlayer1Stats,#danoPlayer1Stats,#defensaPlayer1Stats,#criticoPlayer1Stats,#vidaPlayer2Stats,#danoPlayer2Stats,#defensaPlayer2Stats,#criticoPlayer2Stats{
@@ -110,27 +109,32 @@ body {
     width: 0em;
 }
 
-
 #pantalla3 {
-    background-color: blue;
-
+    background-image: url("../img/barracones.png");
+    background-size: cover;
     display: none;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-}
-
-#listo{
-    height: 5em;
-    width: 100vw;
-    background-color: aqua;
-    visibility: hidden;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .versus{
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: 10em;
+}
+
+#listo{
+    height: 4.1em;
+    width: 25em;
+    background-image: url("../img/columna.png");
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
 }
 
 img{
