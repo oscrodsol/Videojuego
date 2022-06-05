@@ -52,8 +52,8 @@ body {
 }
 
 #pantalla2 {
-    background-color: crimson;
-
+    background-image: url("../img/barracones.png");
+    background-size: cover;
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -86,10 +86,19 @@ body {
 
 #infoPlayer1, #infoPlayer2{
     height: 15em;
+    position: absolute;
+    margin-left: 12em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 } 
+
+#vidaPlayer1Stats,#danoPlayer1Stats,#defensaPlayer1Stats,#criticoPlayer1Stats,#vidaPlayer2Stats,#danoPlayer2Stats,#defensaPlayer2Stats,#criticoPlayer2Stats{
+    background-color: green;
+    height: 1em;
+    width: 0em;
+}
+
 
 #pantalla3 {
     background-color: blue;
@@ -178,12 +187,22 @@ img{
 }
 
 #pantalla5 {
-    background-color: orange;
-
+    background-image: url("../img/fondoGanador.png");
+    background-size: cover;
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#textoGanador{
+    
+}
+
+#ganador{
+    margin-top: 5em;
+    height: 475px;
+    width: 375px;
 }
 
 .logo {

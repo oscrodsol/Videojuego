@@ -32,14 +32,14 @@ let textoBarra1 = document.getElementById("textoBarra1");
 let textoBarra2 = document.getElementById("textoBarra2");
 let gladiadorPlayer1 = document.getElementById("gladiadorPlayer1");
 let gladiadorPlayer2 = document.getElementById("gladiadorPlayer2");
-let infoVidaPlayer1 = document.getElementById("infoVidaPlayer1");
-let infoDanoPlayer1 = document.getElementById("infoDanoPlayer1");
-let infoDefensaPlayer1 = document.getElementById("infoDefensaPlayer1");
-let infoCriticoPlayer1 = document.getElementById("infoCriticoPlayer1");
-let infoVidaPlayer2 = document.getElementById("infoVidaPlayer2");
-let infoDanoPlayer2 = document.getElementById("infoDanoPlayer2");
-let infoDefensaPlayer2 = document.getElementById("infoDefensaPlayer2");
-let infoCriticoPlayer2 = document.getElementById("infoCriticoPlayer2");
+let vidaPlayer1Stats = document.getElementById("vidaPlayer1Stats");
+let danoPlayer1Stats = document.getElementById("danoPlayer1Stats");
+let defensaPlayer1Stats = document.getElementById("defensaPlayer1Stats");
+let criticoPlayer1Stats = document.getElementById("criticoPlayer1Stats");
+let vidaPlayer2Stats = document.getElementById("vidaPlayer2Stats");
+let danoPlayer2Stats = document.getElementById("danoPlayer2Stats");
+let defensaPlayer2Stats = document.getElementById("defensaPlayer2Stats");
+let criticoPlayer2Stats = document.getElementById("criticoPlayer2Stats");
 
 let vidatotal1;
 let vidatotal2;
@@ -57,19 +57,19 @@ const preview = (seleccionado) => {
         case 1:
             preview1 = allplayers[seleccionado];
             gladiadorPlayer1.src = preview1.imgPreview;
-            infoVidaPlayer1.innerHTML = "Vida: " + preview1.vida;
-            infoDanoPlayer1.innerHTML = "Daño: " + preview1.arma.dmg;
-            infoDefensaPlayer1.innerHTML = "Defensa: " + preview1.armadura.reduccionDano;
-            infoCriticoPlayer1.innerHTML = "Critico: " + preview1.arma.critico;
+            vidaPlayer1Stats.style.width = (15 * preview1.vida) / gladiador1.vida + "em";
+            danoPlayer1Stats.style.width = (15 * preview1.arma.dmg) / 140 + "em";
+            defensaPlayer1Stats.style.width = (15 * preview1.armadura.reduccionDano) / 60 + "em";
+            criticoPlayer1Stats.style.width = (15 * preview1.arma.critico) / 50 + "em";
             break;
 
         case 2:
             preview2 = allplayers[seleccionado];
             gladiadorPlayer2.src = preview2.imgPreview;
-            infoVidaPlayer2.innerHTML = "Vida: " + preview2.vida;
-            infoDanoPlayer2.innerHTML = "Daño: " + preview2.arma.dmg;
-            infoDefensaPlayer2.innerHTML = "Defensa: " + preview2.armadura.reduccionDano;
-            infoCriticoPlayer2.innerHTML = "Critico: " + preview2.arma.critico;
+            vidaPlayer2Stats.style.width = (15 * preview2.vida) / gladiador1.vida + "em";
+            danoPlayer2Stats.style.width = (15 * preview2.arma.dmg) / 140 + "em";
+            defensaPlayer2Stats.style.width = (15 * preview2.armadura.reduccionDano) / 60 + "em";
+            criticoPlayer2Stats.style.width = (15 * preview2.arma.critico) / 50 + "em";
             break;
 
         default:
@@ -108,8 +108,8 @@ const selecciona = (seleccionado) => {
         player2vs.src = player2.img;
         player1Combate.src = player1.img;
         player2Combate.src = player2.img;
-        vidatotal1 = player2.vida;
-        vidatotal2 = player1.vida;
+        vidatotal1 = player1.vida;
+        vidatotal2 = player2.vida;
         player1.posicion.x = 300;
         player1.posicion.y = 200;
         player2.posicion.x = 1100;

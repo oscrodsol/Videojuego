@@ -25,21 +25,38 @@
             <div class="previewGladiador">
                 <img src="img/placeholder.png" alt="" id="gladiadorPlayer1">
                 <div id="infoPlayer1">
-                    <div id="infoVidaPlayer1">Vida:</div>
-                    <div id="infoDanoPlayer1">Daño:</div>
-                    <div id="infoDefensaPlayer1">Defensa:</div>
-                    <div id="infoCriticoPlayer1">Critico:</div>
+                    <div id="infoVidaPlayer1">Vida:
+                        <div id="vidaPlayer1Stats"></div>
+                    </div>
+                    <div id="infoDanoPlayer1">Daño:
+                        <div id="danoPlayer1Stats"></div>
+                    </div>
+                    <div id="infoDefensaPlayer1">Defensa:
+                        <div id="defensaPlayer1Stats"></div>
+                    </div>
+                    <div id="infoCriticoPlayer1">Critico:
+                        <div id="criticoPlayer1Stats"></div>
+                    </div>
                 </div>
             </div>
             <div class="previewVersus"><img src="img/vs.png" alt=""></div>
             <div class="previewGladiador">
-                <img src="img/placeholder.png" alt="" id="gladiadorPlayer2">
                 <div id="infoPlayer2">
-                    <div id="infoVidaPlayer2">Vida:</div>
-                    <div id="infoDanoPlayer2">Daño:</div>
-                    <div id="infoDefensaPlayer2">Defensa:</div>
-                    <div id="infoCriticoPlayer2">Critico:</div>
+                    <div id="infoVidaPlayer2">Vida:
+                        <div id="vidaPlayer2Stats"></div>
+                    </div>
+                    <div id="infoDanoPlayer2">Daño:
+                        <div id="danoPlayer2Stats"></div>
+                    </div>
+                    <div id="infoDefensaPlayer2">Defensa:
+                        <div id="defensaPlayer2Stats"></div>
+                    </div>
+                    <div id="infoCriticoPlayer2">Critico:
+                        <div id="criticoPlayer2Stats"></div>
+                    </div>
+                    
                 </div>
+                <img src="img/placeholder.png" alt="" id="gladiadorPlayer2">
             </div>
         </div>
         <div class="padre">
@@ -80,9 +97,9 @@
         </div>
         
     </div>
-    <div id="pantalla5" onclick="screenSwitch('pantalla1')">
-        <div class="ganador"><img src="" alt="" id = "ganador"></div>
+    <div id="pantalla5">
         <div class="textoGanador"><p id = "textoGanador"></p></div>
+        <div class="ganador"><img src="" alt="" id = "ganador" onclick="screenSwitch('pantalla1')"></div>
     </div>
 
     <script src="js/gladiador.js"></script>

@@ -27,7 +27,7 @@ const ataque1 = () => {
     console.log("Vida jugador 2: " + vidatotal2);
 
     if (vidatotal2 <= 0) {
-        ganador.src = player1.img;
+        ganador.src = player1.imgVictoria;
         textoGanador.innerHTML = `El ganador es el jugador 1 con la clase ${player1.clase}`;
         screenSwitch('pantalla5');
     }
@@ -63,7 +63,7 @@ const ataque2 = () => {
     console.log("Vida jugador 1: " + vidatotal1);
 
     if (vidatotal1 <= 0) {
-        ganador.src = player2.img;
+        ganador.src = player2.imgVictoria;
         textoGanador.innerHTML = `El ganador es el jugador 2 con la clase ${player2.clase}`;
         screenSwitch('pantalla5');
     }
