@@ -105,7 +105,7 @@ window.addEventListener("keydown", (event) => {
             break
         case 'w':
             if (player1.posicion.y + player1.altura >= 600) {
-                player1.velocidad.y = -12;
+                player1.velocidad.y = -15;
                 player1.image = player1.sprites.salto.image;
             }
             break
@@ -126,7 +126,7 @@ window.addEventListener("keydown", (event) => {
             break
         case '8':
             if (player2.posicion.y + player2.altura >= 600) {
-                player2.velocidad.y = -12;
+                player2.velocidad.y = -15;
                 player2.image = player2.sprites.salto.image;
             }
             break
