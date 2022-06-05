@@ -61,6 +61,9 @@ body {
 }
 
 .padreArriba{
+    background-image: url("../img/fondoStats.png");
+    background-size: cover;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -68,18 +71,19 @@ body {
 }
 
 .previewGladiador{
+    margin-left: 2em;
     height: 23em;
     width: 30em;
     display: flex;
     align-items: center;
 }
 
-#gladiadorPlayer1{
-    height: 250px;
-    width: 250px;
+.player1vs, .player2vs{
+    background-image: url("../img/pergamino.jpg");
+    background-size: cover;
 }
 
-#gladiadorPlayer2{
+#gladiadorPlayer1,#gladiadorPlayer2{
     height: 250px;
     width: 250px;
 }
@@ -92,6 +96,13 @@ body {
     flex-direction: column;
     justify-content: space-around;
 } 
+
+.infoBarra1, .infoBarra2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3em;
+}
 
 #vidaPlayer1Stats,#danoPlayer1Stats,#defensaPlayer1Stats,#criticoPlayer1Stats,#vidaPlayer2Stats,#danoPlayer2Stats,#defensaPlayer2Stats,#criticoPlayer2Stats{
     background-color: green;
@@ -113,7 +124,7 @@ body {
     height: 5em;
     width: 100vw;
     background-color: aqua;
-    display: none;
+    visibility: hidden;
 }
 
 .versus{
@@ -141,13 +152,24 @@ img{
     flex-direction: column;
 }
 
-.infoJugador1, .infoJugador2{
-    height: 15em;
-    width: 15em;
+.textoJugador1,.textoJugador2{
+    height: 4.1em;
+    width: 25em;
+    background-image: url("../img/columna.png");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.infoJugador1, .infoJugador2{
+    height: 10em;
+    width: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .vida1, .vida2, #vida1, #vida2{
@@ -195,14 +217,31 @@ img{
     flex-direction: column;
 }
 
-#textoGanador{
-    
+.textoGanador{
+    background-image: url("../img/titulo.png");
+    background-size: cover;
+    height: 10em;
+    width: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #ganador{
-    margin-top: 5em;
+    margin-top: 2em;
     height: 475px;
     width: 375px;
+}
+
+#botonRepetir{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/columna.png");
+    background-size: cover;
+    height: 4.1em;
+    width: 25em;
 }
 
 .logo {
@@ -230,9 +269,22 @@ img{
     background-color: aqua;
 }
 
-.gladiador{
+.gladiador1,.gladiador2,.gladiador3,.gladiador4{
 
+    background-size: cover;
     display: flex;
-    height: 10em;
-    width: 10em;
+    height: 15em;
+    width: 15em;
+}
+.gladiador1{
+    background-image: url("../img/equipacionMurmillo.png");
+}
+.gladiador2{
+    background-image: url("../img/equipacionRetiarius.png");
+}
+.gladiador3{
+    background-image: url("../img/equipacionHoplomachus.png");
+}
+.gladiador4{
+    background-image: url("../img/equipacionDimachaerus.png");
 }

@@ -1,22 +1,3 @@
-let pantalla4 = false;
-const screenSwitch = (pantallaDestino) => {
-
-    let destino = document.getElementById(pantallaDestino);
-    destino.style.display = "flex";
-
-    let arrayPantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5"];
-
-    for (let pantalla of arrayPantallas) {
-        if (pantalla != pantallaDestino) {
-            document.getElementById(pantalla).style.display = "none";
-        };
-    };
-
-    if (pantallaDestino == "pantalla4") {
-        fps();
-    }
-};
-
 let player1vs = document.getElementById("player1vs");
 let player2vs = document.getElementById("player2vs");
 let player1Combate = document.getElementById("player1Combate");
@@ -50,6 +31,35 @@ let player2 = "";
 let turnoSeleccion = 1;
 let preview1;
 let preview2;
+
+let pantalla4 = false;
+const screenSwitch = (pantallaDestino) => {
+
+    let destino = document.getElementById(pantallaDestino);
+    destino.style.display = "flex";
+
+    let arrayPantallas = ["pantalla1", "pantalla2", "pantalla3", "pantalla4", "pantalla5"];
+
+    for (let pantalla of arrayPantallas) {
+        if (pantalla != pantallaDestino) {
+            document.getElementById(pantalla).style.display = "none";
+        };
+    };
+
+    if (pantallaDestino == "pantalla4") {
+        fps();
+    }
+    if (pantallaDestino == "pantalla5") {
+        setTimeout(() => {
+            botonRepetir.style.visibility = "visible";
+        }, 3000);
+    }
+    if (pantallaDestino == "pantalla1") {
+        botonRepetir.style.visibility = "hidden";
+        botonListo.style.visibility = "hidden";
+    }
+
+};
 
 const preview = (seleccionado) => {
 
@@ -115,11 +125,9 @@ const selecciona = (seleccionado) => {
         player2.posicion.x = 1100;
         player2.posicion.y = 200;
 
-        console.log(player1.clase, player1.arma.dmg, player1.vida);
-        console.log(player2.clase, player2.arma.dmg, player2.vida);
         screenSwitch('pantalla3')
         setTimeout(() => {
-            botonListo.style.display = "block";
+            botonListo.style.visibility = "visible";
         }, 1000);
         turnoSeleccion = 1;
     }
