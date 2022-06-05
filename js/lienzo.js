@@ -58,18 +58,13 @@ const fps = () => {
         setInterval(() => {
             fondo.refresco();
             /* matriz(); */
-            /* murmilloImg.render(); */
             if (player1.posicion.y + player1.altura >= 600) {
                 player1.posicion.y = 600 - player1.altura;
             }
             if (player2.posicion.y + player2.altura >= 600) {
                 player2.posicion.y = 600 - player2.altura;
             }
-            if (player1.ataca == true) {
-                player1.image = player1.sprites.ataque.image
-            }else if(player1.ataca == false){
-                player1.image = player1.sprites.idle.image
-            }
+
             if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x &&
                 player1.hitbox.posicion.x + 50 <= player2.posicion.x + player2.ancho &&
                 player1.hitbox.posicion.y + player1.hitbox.ancho >= player2.posicion.y &&
@@ -78,7 +73,6 @@ const fps = () => {
             ) {
                 ataque1();
                 player1.ataca = false;
-                console.log("hola");
             }
 
             if (player2.hitbox.posicion.x + player2.hitbox.ancho + 50 >= player1.posicion.x &&
@@ -103,30 +97,44 @@ window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case 'd':
             player1.velocidad.x = 8;
+            player1.image = player1.sprites.andar.image;
             break
         case 'a':
             player1.velocidad.x = -8;
+            player1.image = player1.sprites.andar.image;
             break
         case 'w':
             if (player1.posicion.y + player1.altura >= 600) {
                 player1.velocidad.y = -12;
+                player1.image = player1.sprites.salto.image;
             }
             break
         case ' ':
+            player1.image = player1.sprites.ataque.image;
+            setTimeout(() => {
+                player1.image = player1.sprites.idle.image;
+            }, 200)
             player1.ataque()
             break
         case '6':
             player2.velocidad.x = 8;
+            player2.image = player2.sprites.andar.image;
             break
         case '4':
             player2.velocidad.x = -8;
+            player2.image = player2.sprites.andar.image;
             break
         case '8':
             if (player2.posicion.y + player2.altura >= 600) {
                 player2.velocidad.y = -12;
+                player2.image = player2.sprites.salto.image;
             }
             break
         case '0':
+            player2.image = player2.sprites.ataque.image;
+            setTimeout(() => {
+                player2.image = player2.sprites.idle.image;
+            }, 200)
             player2.ataque()
             break
         default:
@@ -138,15 +146,19 @@ window.addEventListener("keyup", (event) => {
     switch (event.key) {
         case 'd':
             player1.velocidad.x = 0;
+            player1.image = player1.sprites.idle.image
             break
         case 'a':
             player1.velocidad.x = 0;
+            player1.image = player1.sprites.idle.image
             break
         case '6':
             player2.velocidad.x = 0;
+            player2.image = player2.sprites.idle.image
             break
         case '4':
             player2.velocidad.x = 0;
+            player2.image = player2.sprites.idle.image
             break
         default:
             break;

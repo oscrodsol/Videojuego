@@ -12,9 +12,9 @@ const screenSwitch = (pantallaDestino) => {
         };
     };
 
-if (pantallaDestino == "pantalla4") {
-    fps();
-}
+    if (pantallaDestino == "pantalla4") {
+        fps();
+    }
 };
 
 let player1vs = document.getElementById("player1vs");
@@ -56,7 +56,7 @@ const selecciona = (seleccionado) => {
             console.log("Ya están todos seleccionados....");
             break;
     }
-    
+
     turnoSeleccion++;
 
     if (turnoSeleccion == 3) {
@@ -71,6 +71,10 @@ const selecciona = (seleccionado) => {
         player2Combate.src = player2.img;
         vidatotal1 = player2.vida;
         vidatotal2 = player1.vida;
+        player1.posicion.x = 300;
+        player1.posicion.y = 200;
+        player2.posicion.x = 1100;
+        player2.posicion.y = 200;
 
         console.log(player1.clase, player1.arma.dmg, player1.vida);
         console.log(player2.clase, player2.arma.dmg, player2.vida);
@@ -80,6 +84,7 @@ const selecciona = (seleccionado) => {
         }, 1000);
         turnoSeleccion = 1;
     }
+
     vida1.style.width = "35em";
     vida2.style.width = "35em";
     vida1.style.backgroundColor = "green";
