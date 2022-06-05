@@ -22,15 +22,31 @@
     <div id="pantalla2" >
         <div class="escoge">Escoge tu equipamiento</div>
         <div class="padreArriba">
-            <div class="previewGladiador"><img src="" alt="" id="gladiadorPlayer1"></div>
+            <div class="previewGladiador">
+                <img src="img/placeholder.png" alt="" id="gladiadorPlayer1">
+                <div id="infoPlayer1">
+                    <div id="infoVidaPlayer1">Vida:</div>
+                    <div id="infoDanoPlayer1">Daño:</div>
+                    <div id="infoDefensaPlayer1">Defensa:</div>
+                    <div id="infoCriticoPlayer1">Critico:</div>
+                </div>
+            </div>
             <div class="previewVersus"><img src="img/vs.png" alt=""></div>
-            <div class="previewGladiador"><img src="" alt="" id="gladiadorPlayer2"></div>
+            <div class="previewGladiador">
+                <img src="img/placeholder.png" alt="" id="gladiadorPlayer2">
+                <div id="infoPlayer2">
+                    <div id="infoVidaPlayer2">Vida:</div>
+                    <div id="infoDanoPlayer2">Daño:</div>
+                    <div id="infoDefensaPlayer2">Defensa:</div>
+                    <div id="infoCriticoPlayer2">Critico:</div>
+                </div>
+            </div>
         </div>
         <div class="padre">
-            <div class="gladiador" onclick="selecciona('1')"><img class="foto" src="img/gladius.png" alt="adsf"></div>
-            <div class="gladiador" onclick="selecciona('2')"><img class="foto" src="img/tridente.png" alt="asfasdf"></div>
-            <div class="gladiador" onclick="selecciona('3')"><img class="foto" src="img/lanza.png" alt="fffff"></div>
-            <div class="gladiador" onclick="selecciona('4')"><img class="foto" src="img/duales.png" alt="pppppopop"></div>
+            <div class="gladiador" onclick="selecciona('1')" onmousemove="preview('1')"><img class="foto" src="img/gladius.png"></div>
+            <div class="gladiador" onclick="selecciona('2')" onmousemove="preview('2')"><img class="foto" src="img/tridente.png"></div>
+            <div class="gladiador" onclick="selecciona('3')" onmousemove="preview('3')"><img class="foto" src="img/lanza.png"></div>
+            <div class="gladiador" onclick="selecciona('4')" onmousemove="preview('4')"><img class="foto" src="img/duales.png"></div>
         </div>
         <div id="boton" onclick="screenSwitch('pantalla3')"></div>
     </div>

@@ -60,6 +60,37 @@ body {
     align-items: center;
 }
 
+.padreArriba{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.previewGladiador{
+    height: 23em;
+    width: 30em;
+    display: flex;
+    align-items: center;
+}
+
+#gladiadorPlayer1{
+    height: 250px;
+    width: 250px;
+}
+
+#gladiadorPlayer2{
+    height: 250px;
+    width: 250px;
+}
+
+#infoPlayer1, #infoPlayer2{
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} 
+
 #pantalla3 {
     background-color: blue;
 
