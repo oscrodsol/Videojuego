@@ -1,4 +1,4 @@
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Declaracion de variables que contienen los elementos html    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let player1vs = document.getElementById("player1vs");
 let player2vs = document.getElementById("player2vs");
@@ -35,7 +35,7 @@ let preview1;
 let preview2;
 let pantalla4 = false;
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Metodo que cambia de pantalla e inicializa el refresco de los fps en el juego    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 const screenSwitch = (pantallaDestino) => {
 
@@ -65,7 +65,7 @@ const screenSwitch = (pantallaDestino) => {
 
 };
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////    Metodo de previsualizacion de los personajes, cambia la longitud de las barrasy muestra las diferentes clases    \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 const preview = (seleccionado) => {
 
@@ -94,7 +94,10 @@ const preview = (seleccionado) => {
 
 };
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/* 
+Metodo que referencia al diccionario en el archivo gladiador.js, con el seleccionamos y asignamos las clases a los jugadores, cambia las variables a un numero por
+defecto si se quiere volver a jugar y le da latencia al boton de la pantalla 3
+ */
 
 const selecciona = (seleccionado) => {
 

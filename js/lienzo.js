@@ -1,10 +1,10 @@
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Declaracion del elemento canvas    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let juego = document.getElementById("lienzo");
 let lienzo = juego.getContext("2d");
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////////////////    Constructor que solo sirve para declarar e inicializar el fondo del juego    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class Sprite {
     constructor({posicion, linkImg}) {
@@ -31,7 +31,7 @@ let fondo = new Sprite({
     linkImg: "img/coliseo.png"
 })
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////    Este metodo sirve por si hay algun problema en el juego con las hitbox y colocacion de objetos en el canvas, es una matriz   \\\\\\\\\\
 
 /* const matriz = () => {
 
@@ -59,15 +59,14 @@ let fondo = new Sprite({
     }
 } */
 
-
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-/* refresco*/
+/////////////////////    Inicia el videojuego como tal, deine la tasa de refresco y dibuja las imagenes   \\\\\\\\\\\\\\\\\\\\\\\\
 const fps = () => {
     if (pantalla4 = true) {
         setInterval(() => {
             fondo.refresco();
             /* matriz(); */
+
+            //Si los jugadores caen por debajo del limite del suelo los llevan de nuevo a sus limites
             if (player1.posicion.y + player1.altura >= 600) {
                 player1.posicion.y = 600 - player1.altura;
             }
@@ -75,13 +74,15 @@ const fps = () => {
                 player2.posicion.y = 600 - player2.altura;
             }
 
+            //Estos 4 if's sirven para que los jugadores no atraviesen los limites de la pantalla
+
             if (player1.posicion.x <= 0) {
                 player1.posicion.x = 0;
                 player1.image = player1.sprites.idle.image;
             }
             if (player2.posicion.x <= 0) {
                 player2.posicion.x = 0;
-                player2.image = player2.sprites.idle.image;
+                player2.image = player2.sprites.idle2.image;
             }
 
             if (player1.posicion.x + player1.ancho>= juego.width) {
@@ -92,6 +93,8 @@ const fps = () => {
                 player2.posicion.x = juego.width - player2.ancho - 125;
                 player2.image = player2.sprites.idle2.image;
             }
+
+            //Comprueba que la hitbox del arma de los jugadores estan dentro de la hitbox del adversario, si lo está, lanza el metodo ataque
 
             if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x + 100 &&
                 player1.hitbox.posicion.x + 50 <= player2.posicion.x + 100 + player2.ancho &&
@@ -114,14 +117,15 @@ const fps = () => {
                 console.log("hola");
             }
 
+            //Dibuja a los jugadores en la pantalla
+
             player1.refresco();
             player2.refresco();
-            /*     console.log("jejejeje") */
         }, 1000 / 60);
     }
 }
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////// Asignacion de teclas de los jugadores con sus respectivos sprites \\\\\\\\\\\\
 
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
@@ -171,8 +175,6 @@ window.addEventListener("keydown", (event) => {
             break;
     }
 });
-
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 window.addEventListener("keyup", (event) => {
     switch (event.key) {

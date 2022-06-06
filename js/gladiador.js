@@ -1,5 +1,5 @@
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Constructor creacion gladiadores    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class Gladiador{
 
@@ -34,33 +34,13 @@ class Gladiador{
         }
     }
 
-    //////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Metodo que dibuja al personaje en el canvas    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     render() {
-/*         lienzo.fillStyle = "yellowgreen";
-        lienzo.fillRect(this.posicion.x, this.posicion.y, this.ancho, this.altura);
-        lienzo.strokeStyle = "green";
-        lienzo.strokeRect(this.posicion.x, this.posicion.y, this.ancho, this.altura);
- */
-
         lienzo.drawImage(this.image, this.posicion.x, this.posicion.y);
-
-/*         if (player1.ataca == true) {
-            lienzo.fillStyle = "brown";
-            lienzo.fillRect(player1.hitbox.posicion.x + 50, player1.hitbox.posicion.y + 50, player1.hitbox.ancho, player1.hitbox.alto);
-            lienzo.strokeStyle = "red";
-            lienzo.strokeRect(player1.hitbox.posicion.x + 50, player1.hitbox.posicion.y + 50, player1.hitbox.ancho, player1.hitbox.alto);
-        }
-        if (player2.ataca == true) {
-            lienzo.fillStyle = "brown";
-            lienzo.fillRect(player2.hitbox.posicion.x + 50, player2.hitbox.posicion.y + 50, player2.hitbox.ancho, player2.hitbox.alto);
-            lienzo.strokeStyle = "red";
-            lienzo.strokeRect(player2.hitbox.posicion.x + 50, player2.hitbox.posicion.y + 50, player2.hitbox.ancho, player2.hitbox.alto);
-        } */
-
     }
 
-    //////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Metodo que actualiza la posicion de los personajes    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     refresco() {
         this.render();
@@ -75,7 +55,7 @@ class Gladiador{
         }
     }
 
-    //////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Metodo que da delay a los ataques    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     ataque() {
         this.ataca = true;
@@ -86,7 +66,7 @@ class Gladiador{
     }
 }
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Constructor armas    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class Arma {
 
@@ -99,13 +79,15 @@ class Arma {
     }
 }
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////    Declaracion armas    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let arma1 = new Arma("gladius", 50, 20, 0, 30);
 let arma2 = new Arma("tridente", 90, 50, 70, 50);
 let arma3 = new Arma("lanza", 70, 30, 40, 60);
 let arma4 = new Arma("espadas", 140, 50, 20, 30);
 
+
+//////////////////////////////////////////////    Declaracion escudos y armaduras    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let escudo1 = {
     nombre: "Escudo Grande",
@@ -131,6 +113,8 @@ let armadura3 = {
     nombre: "Armadura Ligera",
     reduccionDano: 10
 }
+
+//////////////////////////////////////////////    GLADIADOR1    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let gladiador1 = new Gladiador(
     "Murmillo", 
@@ -158,6 +142,8 @@ let gladiador1 = new Gladiador(
     "img/murmillo/Idle.png"
 );
 
+//////////////////////////////////////////////    GLADIADOR2    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 let gladiador2 = new Gladiador(
     "Retiarius", 
     1100, 
@@ -183,6 +169,8 @@ let gladiador2 = new Gladiador(
     },
     "img/retiarius/Idle.png"
 );
+
+//////////////////////////////////////////////    GLADIADOR3    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let gladiador3 = new Gladiador(
     "Hoplomachus", 
@@ -210,6 +198,8 @@ let gladiador3 = new Gladiador(
     "img/hoplomachus/Idle.png"
 );
 
+//////////////////////////////////////////////    GLADIADOR4    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 let gladiador4 = new Gladiador(
     "Dimachaerus", 
     900, 
@@ -235,6 +225,8 @@ let gladiador4 = new Gladiador(
     },
     "img/dimachaerus/Idle.png"
 );
+
+//Diccionario de jugadores
 
 let allplayers = {
     "1": gladiador1,

@@ -8,7 +8,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
+/*-----------------------------------------------------------------------PANTALLA 1----------------------------------------------------------------------- */
 #pantalla1 {
 
     background-image: url("../img/inicio.png");
@@ -19,6 +19,14 @@ body {
     flex-direction: column;
 
 }
+
+.opcion,.escoge,#listo,.textoJugador1,.textoJugador2,#botonRepetir{
+    background-image: url("../img/columna.png");
+    background-size: cover;
+    height: 4.1em;
+    width: 25em;
+}
+
 .titulo{
     height: 11em;
     width: 35em;
@@ -42,12 +50,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4.1em;
-    width: 25em;
-    background-image: url("../img/columna.png");
-    background-size: cover;
-
 }
+
+/*-----------------------------------------------------------------------PANTALLA 2----------------------------------------------------------------------- */
 
 #pantalla2{
     background-image: url("../img/barracones.png");
@@ -62,10 +67,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4.1em;
-    width: 25em;
-    background-image: url("../img/columna.png");
-    background-size: cover;
+}
+
+.padre{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3em;
 }
 
 .padreArriba{
@@ -76,6 +87,29 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+}
+
+.gladiador1,.gladiador2,.gladiador3,.gladiador4{
+    background-size: cover;
+    display: flex;
+    height: 15em;
+    width: 15em;
+}
+
+.gladiador1{
+    background-image: url("../img/equipacionMurmillo.png");
+}
+
+.gladiador2{
+    background-image: url("../img/equipacionRetiarius.png");
+}
+
+.gladiador3{
+    background-image: url("../img/equipacionHoplomachus.png");
+}
+
+.gladiador4{
+    background-image: url("../img/equipacionDimachaerus.png");
 }
 
 .previewGladiador{
@@ -146,6 +180,8 @@ body {
     text-align:right;
 }
 
+/*-----------------------------------------------------------------------PANTALLA 3----------------------------------------------------------------------- */
+
 #pantalla3 {
     background-image: url("../img/barracones.png");
     background-size: cover;
@@ -164,11 +200,7 @@ body {
 }
 
 #listo{
-    height: 4.1em;
-    width: 25em;
-    background-image: url("../img/columna.png");
     display: flex;
-    background-size: cover;
     justify-content: center;
     align-items: center;
     visibility: hidden;
@@ -176,6 +208,13 @@ body {
 
 img{
     height: 10em;
+}
+
+/*-----------------------------------------------------------------------PANTALLA 4----------------------------------------------------------------------- */
+
+#pantalla4 {
+    display: none;
+    flex-direction: column;
 }
 
 .jugadores{
@@ -188,16 +227,7 @@ img{
     display: flex;
 }
 
-#pantalla4 {
-    display: none;
-    flex-direction: column;
-}
-
 .textoJugador1,.textoJugador2{
-    height: 4.1em;
-    width: 25em;
-    background-image: url("../img/columna.png");
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,6 +279,8 @@ img{
     transition: width 0.3s;
 }
 
+/*-----------------------------------------------------------------------PANTALLA1----------------------------------------------------------------------- */
+
 #pantalla5 {
     background-image: url("../img/fondoGanador.png");
     background-size: cover;
@@ -279,54 +311,5 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../img/columna.png");
-    background-size: cover;
-    height: 4.1em;
-    width: 25em;
-}
 
-.logo {
-
-    height: 15em;
-
-    width: 27em;
-} 
-.padre{
-
-    height: 30%;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 3em;
-
-}
-
-#boton{
-    height: 3em;
-    width: 100%;
-
-    background-color: aqua;
-}
-
-.gladiador1,.gladiador2,.gladiador3,.gladiador4{
-
-    background-size: cover;
-    display: flex;
-    height: 15em;
-    width: 15em;
-}
-.gladiador1{
-    background-image: url("../img/equipacionMurmillo.png");
-}
-.gladiador2{
-    background-image: url("../img/equipacionRetiarius.png");
-}
-.gladiador3{
-    background-image: url("../img/equipacionHoplomachus.png");
-}
-.gladiador4{
-    background-image: url("../img/equipacionDimachaerus.png");
 }

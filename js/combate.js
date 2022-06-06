@@ -1,5 +1,4 @@
-
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////    Metodo que determina si es critico o no, el daño que hace el jugador 1, si gana el jugador 1 y la longitud de la barra de vida del jugador 2    \\\\
 
 let critico = 0;
 const ataque1 = () => {
@@ -36,7 +35,7 @@ const ataque1 = () => {
     }
 }
 
-//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////    Metodo que determina si es critico o no, el daño que hace el jugador 2, si gana el jugador 2 y la longitud de la barra de vida del jugador 1    \\\\
 
 const ataque2 = () => {
     if (Math.floor(Math.random() * 100) <= player2.arma.critico) {
