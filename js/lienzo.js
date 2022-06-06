@@ -1,5 +1,10 @@
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 let juego = document.getElementById("lienzo");
 let lienzo = juego.getContext("2d");
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class Sprite {
     constructor({posicion, linkImg}) {
@@ -26,7 +31,9 @@ let fondo = new Sprite({
     linkImg: "img/coliseo.png"
 })
 
-const matriz = () => {
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/* const matriz = () => {
 
     for (var x = 0; x < juego.width; x += 10) {
         lienzo.strokeStyle = "green";
@@ -50,7 +57,10 @@ const matriz = () => {
         if (y % 50 == 0) { lienzo.fillText(y, 0, y + 10); }
         lienzo.stroke();
     }
-}
+} */
+
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /* refresco*/
 const fps = () => {
@@ -65,8 +75,26 @@ const fps = () => {
                 player2.posicion.y = 600 - player2.altura;
             }
 
-            if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x &&
-                player1.hitbox.posicion.x + 50 <= player2.posicion.x + player2.ancho &&
+            if (player1.posicion.x <= 0) {
+                player1.posicion.x = 0;
+                player1.image = player1.sprites.idle.image;
+            }
+            if (player2.posicion.x <= 0) {
+                player2.posicion.x = 0;
+                player2.image = player2.sprites.idle.image;
+            }
+
+            if (player1.posicion.x + player1.ancho>= juego.width) {
+                player1.posicion.x = juego.width - player1.ancho;
+                player1.image = player1.sprites.idle.image;
+            }
+            if (player2.posicion.x + player2.ancho + 125>= juego.width) {
+                player2.posicion.x = juego.width - player2.ancho - 125;
+                player2.image = player2.sprites.idle2.image;
+            }
+
+            if (player1.hitbox.posicion.x + player1.hitbox.ancho + 50 >= player2.posicion.x + 100 &&
+                player1.hitbox.posicion.x + 50 <= player2.posicion.x + 100 + player2.ancho &&
                 player1.hitbox.posicion.y + player1.hitbox.ancho >= player2.posicion.y &&
                 player1.hitbox.posicion.y <= player2.posicion.y + player2.altura &&
                 player1.ataca == true
@@ -75,8 +103,8 @@ const fps = () => {
                 player1.ataca = false;
             }
 
-            if (player2.hitbox.posicion.x + player2.hitbox.ancho + 50 >= player1.posicion.x &&
-                player2.hitbox.posicion.x + 50 <= player1.posicion.x + player1.ancho &&
+            if (player2.hitbox.posicion.x + player2.hitbox.ancho >= player1.posicion.x &&
+                player2.hitbox.posicion.x <= player1.posicion.x + player1.ancho &&
                 player2.hitbox.posicion.y + player2.hitbox.ancho >= player1.posicion.y &&
                 player2.hitbox.posicion.y <= player1.posicion.y + player1.altura &&
                 player2.ataca == true
@@ -92,6 +120,8 @@ const fps = () => {
         }, 1000 / 60);
     }
 }
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
@@ -118,22 +148,22 @@ window.addEventListener("keydown", (event) => {
             break
         case '6':
             player2.velocidad.x = 8;
-            player2.image = player2.sprites.andar.image;
+            player2.image = player2.sprites.andar2.image;
             break
         case '4':
             player2.velocidad.x = -8;
-            player2.image = player2.sprites.andar.image;
+            player2.image = player2.sprites.andar2.image;
             break
         case '8':
             if (player2.posicion.y + player2.altura >= 600) {
                 player2.velocidad.y = -15;
-                player2.image = player2.sprites.salto.image;
+                player2.image = player2.sprites.salto2.image;
             }
             break
         case '0':
-            player2.image = player2.sprites.ataque.image;
+            player2.image = player2.sprites.ataque2.image;
             setTimeout(() => {
-                player2.image = player2.sprites.idle.image;
+                player2.image = player2.sprites.idle2.image;
             }, 200)
             player2.ataque()
             break
@@ -141,6 +171,8 @@ window.addEventListener("keydown", (event) => {
             break;
     }
 });
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 window.addEventListener("keyup", (event) => {
     switch (event.key) {
@@ -154,11 +186,11 @@ window.addEventListener("keyup", (event) => {
             break
         case '6':
             player2.velocidad.x = 0;
-            player2.image = player2.sprites.idle.image
+            player2.image = player2.sprites.idle2.image
             break
         case '4':
             player2.velocidad.x = 0;
-            player2.image = player2.sprites.idle.image
+            player2.image = player2.sprites.idle2.image
             break
         default:
             break;

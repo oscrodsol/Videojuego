@@ -1,3 +1,5 @@
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 let player1vs = document.getElementById("player1vs");
 let player2vs = document.getElementById("player2vs");
 let player1Combate = document.getElementById("player1Combate");
@@ -31,8 +33,10 @@ let player2 = "";
 let turnoSeleccion = 1;
 let preview1;
 let preview2;
-
 let pantalla4 = false;
+
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 const screenSwitch = (pantallaDestino) => {
 
     let destino = document.getElementById(pantallaDestino);
@@ -61,6 +65,8 @@ const screenSwitch = (pantallaDestino) => {
 
 };
 
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 const preview = (seleccionado) => {
 
     switch (turnoSeleccion) {
@@ -75,7 +81,7 @@ const preview = (seleccionado) => {
 
         case 2:
             preview2 = allplayers[seleccionado];
-            gladiadorPlayer2.src = preview2.imgPreview;
+            gladiadorPlayer2.src = preview2.imgPreview2;
             vidaPlayer2Stats.style.width = (15 * preview2.vida) / gladiador1.vida + "em";
             danoPlayer2Stats.style.width = (15 * preview2.arma.dmg) / 140 + "em";
             defensaPlayer2Stats.style.width = (15 * preview2.armadura.reduccionDano) / 60 + "em";
@@ -88,6 +94,7 @@ const preview = (seleccionado) => {
 
 };
 
+//////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 const selecciona = (seleccionado) => {
 
